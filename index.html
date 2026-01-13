@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #d4af37; /* Gold */
+            --secondary-color: #fdfbf7; /* Off-white background */
+            --accent-pink: #e6a4b4; /* Soft Rose */
+            --text-dark: #333;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 2s ease;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            letter-spacing: 2px;
+            animation: fadeInUp 2s ease;
+        }
+
+        /* Message Section */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .message-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--accent-pink);
+        }
+
+        h2 {
+            color: var(--accent-pink);
+            font-size: 2.5rem;
+            font-family: 'Dancing Script', cursive;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            background-color: #fff0f3;
+            padding: 60px 20px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .photo-card {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        /* Wishes List */
+        .wishes-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .wishes-list li {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Button */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            background-color: var(--accent-pink);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition:  background 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+        .btn:hover {
+            background-color: #d08c9f;
+        }
+
+        /* --- POPUP MODAL STYLES (NEW) --- */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; 
+            z-index: 1000; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+            animation: fadeIn 0.4s;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 15px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .modal img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0}
+            to {opacity: 1}
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Happy Birthday</h1>
+        <div class="subtitle">TO MY FAVORITE PERSON</div>
+    </header>
+
+    <section class="container">
+        <div class="message-box">
+            <h2>Dearest [My Anu]💕</h2>
+            <p>
+              Happy Birthday! To my favorite person: my forever thought, my Dua, my laugh, and my home. 
+               I hope today is as beautiful and kind as your soul is.Always see Future Together
+                It is remind you of how incredibly special you are to me 
+            </p>
+            <p>
+               "Khuda kaise na fida hota tum par, Tumhe banakar usne khud par bhi sitam kiya hai
+               . Khush-naseeb hain hum jo tum mile humein, Aaj ke din us khuda ne hum par karam kiya hai.🫶❤️
+            </p>
+            <p>
+                "Zindagi ki har duaa qubool ho gayi, Jab se tum meri zindagi ka hissa ban gayi.
+                 Salamat rahe hamesha muskurahat tumhari, Kyuki meri har khushi tumhari khushi se jud gayi.💝
+            </p>
+            <p><strong>My 11:11 Wish😘</strong></p>
+        </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <h2>Our Memories</h2>
+            <div class="gallery-grid">
+                <div class="photo-card">
+                    <img src="WhatsApp Image 2026-01-13 at 8.34.26 PM.jpeg" alt="Memory 1">
+                </div>
+                <div class="photo-card">
+                    <img src="WhatsApp Image 2026-01-13 at 8.34.26 PM1.jpeg" alt="Memory 2">
+                </div>
+                <div class="photo-card">
+                    <img src="WhatsApp Image 2026-01-13 at 8.34.26 PM2.jpeg" alt="Memory 3">
+                </div>
+                 <div class="photo-card">
+                    <img src="WhatsApp Image 2026-01-13 at 8.34.27 PM3.jpeg" alt="Memory 3">
+                </div>
+                 <div class="photo-card">
+                    <img src="WhatsApp Image 2026-01-13 at 8.34.27 PM5.jpeg" alt="Memory 3">
+                </div>
+                <div class="photo-card">
+                    <img src="WhatsApp Image 2026-01-13 at 8.46.35 PM.jpeg" alt="Memory 3">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2>Why You Are Special</h2>
+        <ul class="wishes-list">
+            <li>✨ Today is all about you, but I feel like I’m the one who got the gift.</li>
+            <li>✨ I hope today shows you even a fraction of how much you're loved.</li>
+            <li>✨ You have a smile that can light up the darkest rooms.</li>
+            <li>✨our Heart is My Home: No matter where we are, I feel "at home" the second I’m with you. My sense of peace is tied directly to your presence.</li>
+            <li>✨ I still think about that time we [went to lonavala from the college is the precious time spend with you] and how much moments/talks we had."</li>
+            <li>✨ You Are My "Once in a Lifetime": I don't believe in coincidences anymore; I believe I was meant to find you. You are the best thing that has ever happened to me.</li>
+        </ul>
+        
+        <button class="btn" onclick="openModal()">Click for a Hug</button>
+    </section>
+
+    <div id="hugModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 style="font-size: 2rem;">Sending you a BIG Hug! 🤗</h2>
+            <img src="https://media.giphy.com/media/3M4NpbLCTxBqU/giphy.gif" alt="Cute Hug GIF">
+            <p style="margin-top:15px; font-size:0.9rem;">(Imagine I am squeezing you this tight right now!)</p>
+        </div>
+    </div>
+
+    <footer>
+        Made with ❤️ by [Ayazz] | Birthday 2026
+    </footer>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("hugModal");
+
+        // Function to open the modal
+        function openModal() {
+            modal.style.display = "block";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        // Close the modal if user clicks outside of the box
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
